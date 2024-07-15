@@ -65,8 +65,8 @@ subprojects {
             val dockerTask: DockerBuildImage = tasks.create("dockerize", DockerBuildImage::class) {
                 val dockerContextDir = project.projectDir
                 dockerFile.set(file("$dockerContextDir/src/main/docker/Dockerfile"))
-                images.add("${project.name}:${project.version}")
-                images.add("${project.name}:latest")
+                images.add("ghcr.io/connected-intelligent-systems/${project.name}:${project.version}")
+                images.add("ghcr.io/connected-intelligent-systems/${project.name}:latest")
                 // specify platform with the -Dplatform flag:
                 if (System.getProperty("platform") != null)
                     platform.set(System.getProperty("platform"))

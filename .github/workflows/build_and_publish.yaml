@@ -37,17 +37,5 @@ jobs:
       - name: Build and Dockerize
         run: ./gradlew dockerize -Ppersistence=true
 
-      # - name: Extract metadata (tags, labels) for Docker
-      #   id: meta
-      #   uses: docker/metadata-action@v2
-      #   with:
-      #     images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
-      # - name: Build and push Docker image
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: .
-      #     file: ./Dockerfile
-      #     push: true
-      #     tags: ${{ steps.meta.outputs.tags }},${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-      #     labels: ${{ steps.meta.outputs.labels }}
+      - name: Push Docker Image
+        run: docker push ghcr.io/connected-intelligent-systems/connector -a

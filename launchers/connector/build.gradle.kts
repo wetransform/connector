@@ -25,40 +25,54 @@ dependencies {
     implementation(libs.edc.control.plane.core)
     implementation(libs.edc.dsp)
     implementation(libs.edc.configuration.filesystem)
-    implementation(libs.edc.iam.mock)
     implementation(libs.edc.management.api)
     implementation(libs.edc.transfer.data.plane.signaling)
     implementation(libs.edc.transfer.pull.http.receiver)
     implementation(libs.edc.validator.data.address.http.data)
-    implementation(libs.edc.api.observability)
-    implementation(libs.edc.ext.observability)
+
+    implementation(libs.edc.token.core)
+    implementation(libs.edc.http)
+    implementation(libs.edc.data.plane.iam)
 
     implementation(libs.edc.edr.cache.api)
     implementation(libs.edc.edr.store.core)
     implementation(libs.edc.edr.store.receiver)
+    implementation(libs.edc.edr.index.sql)
 
     implementation(libs.edc.data.plane.selector.api)
     implementation(libs.edc.data.plane.selector.core)
 
     implementation(libs.edc.data.plane.self.registration)
-    implementation(libs.edc.data.plane.control.api)
+    implementation(libs.edc.data.plane.signaling.api)
     implementation(libs.edc.data.plane.public.api)
     implementation(libs.edc.data.plane.core)
     implementation(libs.edc.data.plane.http)
 
+    implementation(libs.edc.data.plane.aws.s3)
+
     implementation(libs.edc.oauth2.core)
-    implementation(libs.edc.oauth2.client) 
+    implementation(libs.edc.oauth2.client)
 
-    implementation(libs.edc.edr.cache.api)
-    implementation(libs.edc.edr.store.core)
-    implementation(libs.edc.edr.store.receiver)
+    implementation(libs.edc.api.observability)
 
+    implementation(libs.edc.asset.index.sql)
+    implementation(libs.edc.contract.definition.store.sql)
+    implementation(libs.edc.contract.negotiation.store.sql)
+    implementation(libs.edc.control.plane.sql)
+    implementation(libs.edc.policy.definition.store.sql)
+    implementation(libs.edc.transfer.process.store.sql)
+    implementation(libs.edc.data.plane.store.sql)
+    implementation(libs.edc.data.plane.instance.store.sql)
+    implementation(libs.edc.accesstokendata.store.sql)
 
-    if (project.properties.getOrDefault("persistence", "false") == "true") {
-        runtimeOnly(libs.edc.vault.hashicorp)
-        runtimeOnly(libs.bundles.sql.edc)
-        println("This runtime compiles with Hashicorp Vault and PostgreSQL. You will need properly configured Postgres and HCV instances.")
-    }
+    implementation(libs.edc.sql.pool.apache.commons)
+    implementation(libs.postgresql)
+    implementation(libs.edc.transaction.local)
+    implementation(libs.edc.transaction.datasource.spi)
+
+    implementation(libs.edc.fc.spi.crawler)
+    runtimeOnly(libs.edc.fc.core)
+    runtimeOnly(libs.edc.fc.api)
 }
 
 application {

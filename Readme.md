@@ -1,7 +1,9 @@
 # Connector
 
-Based on [MinimumViableDataspace](https://github.com/eclipse-edc/MinimumViableDataspace)
+This repository contains a dataspace connector built via the [EDC](https://eclipse-edc.github.io/) open source framework by the Eclipse Foundation.
 
-```
-docker run -d --restart always -v /var/run/docker.sock:/var/run/docker.sock -p 2375:2375 --name socat rycus86/docker-socat
-```
+The used configuration is based on [MinimumViableDataspace](https://github.com/eclipse-edc/MinimumViableDataspace)
+
+# License
+
+Apache 2.0

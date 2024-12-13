@@ -16,6 +16,7 @@ plugins {
     `java-library`
     id("application")
     alias(libs.plugins.shadow)
+    id(libs.plugins.swagger.get().pluginId)
 }
 
 dependencies {

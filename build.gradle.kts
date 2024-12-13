@@ -44,8 +44,8 @@ allprojects {
 
     configure<org.eclipse.edc.plugins.edcbuild.extensions.BuildExtension> {
         swagger {
-            title.set("Identity HUB REST API")
-            description = "Identity HUB REST APIs - merged by OpenApiMerger"
+            title.set("Connector REST API")
+            description = "Connector REST API - merged by OpenApiMerger"
             outputFilename.set(project.name)
             outputDirectory.set(file("${rootProject.projectDir.path}/resources/openapi/yaml"))
         }

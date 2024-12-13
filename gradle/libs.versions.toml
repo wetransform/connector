@@ -112,3 +112,4 @@ edc-fc-cache-sql = { module = "org.eclipse.edc:federated-catalog-cache-sql", ver
 
 [plugins]
 shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
+swagger = { id = "io.swagger.core.v3.swagger-gradle-plugin", version = "2.2.27" }

@@ -11,3 +11,5 @@ out/
 *terraform.tfstate*
 
 example
+
+bin
